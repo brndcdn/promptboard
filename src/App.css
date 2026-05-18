@@ -127,7 +127,7 @@ body {
   color: #4c443d;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 800px) {
   .workspace {
     grid-template-columns: 1fr;
   }
