@@ -1,12 +1,15 @@
-function PromptCard({ prompt }) {
+function PromptCard({ prompt, isSelected, onSelectPrompt }) {
   return (
-    <article className="prompt-card">
+    <article
+      className={`prompt-card ${isSelected ? "selected-card" : ""}`}
+      onClick={() => onSelectPrompt(prompt.id)}
+    >
       <div>
         <h3>{prompt.title}</h3>
         <p>{prompt.description}</p>
       </div>
 
-      <span>{prompt.category}</span>
+      <span className="category-badge">{prompt.category}</span>
     </article>
   );
 }
