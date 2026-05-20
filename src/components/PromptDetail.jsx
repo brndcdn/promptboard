@@ -8,10 +8,15 @@ function PromptDetail({ prompt }) {
     );
   }
 
+  function copyPrompt() {
+    navigator.clipboard.writeText(prompt.content);
+
+    alert("Prompt copied to clipboard!");
+  }
+
   return (
     <aside className="prompt-detail">
       <h2>{prompt.title}</h2>
-      <p>{prompt.description}</p>
 
       <div className="tag-list">
         {prompt.tags.map((tag) => (
@@ -22,6 +27,10 @@ function PromptDetail({ prompt }) {
       <div className="prompt-content">
         <p>{prompt.content}</p>
       </div>
+
+      <button className="copy-button" onClick={copyPrompt}>
+        Copy to clipboard
+      </button>
     </aside>
   );
 }

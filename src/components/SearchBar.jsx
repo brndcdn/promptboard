@@ -3,7 +3,7 @@ function SearchBar({ searchTerm, onSearchChange }) {
     <section className="search-bar">
       <input
         type="text"
-        placeholder="Search prompts..."
+        placeholder="Search by title, tag, or keyword..."
         value={searchTerm}
         onChange={(event) => onSearchChange(event.target.value)}
       />

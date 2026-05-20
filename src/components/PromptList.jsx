@@ -1,8 +1,18 @@
 import PromptCard from "./PromptCard";
 
-function PromptList({ prompts, selectedPromptId, onSelectPrompt }) {
+function PromptList({
+  prompts,
+  selectedPromptId,
+  onSelectPrompt,
+  onToggleFavorite,
+}) {
   if (prompts.length === 0) {
-    return <p className="empty-state">No prompts found.</p>;
+    return (
+      <section className="empty-state">
+        <h2>No prompts found</h2>
+        <p>Try adjusting your search or category filter.</p>
+      </section>
+    );
   }
 
   return (
@@ -13,6 +23,7 @@ function PromptList({ prompts, selectedPromptId, onSelectPrompt }) {
           prompt={prompt}
           isSelected={prompt.id === selectedPromptId}
           onSelectPrompt={onSelectPrompt}
+          onToggleFavorite={onToggleFavorite}
         />
       ))}
     </section>

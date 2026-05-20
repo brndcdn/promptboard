@@ -1,4 +1,4 @@
-const categories = ["All", "Design", "Development", "Learning"];
+const categories = ["All", "Favorites", "Design", "Development", "Learning"];
 
 function Sidebar({ selectedCategory, onSelectCategory }) {
   return (

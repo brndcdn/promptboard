@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { prompts } from "./data/prompts";
+import { prompts as initialPrompts } from "./data/prompts";
 import Header from "./components/Header";
 import Sidebar from "./components/Sidebar";
 import SearchBar from "./components/SearchBar";
@@ -8,6 +8,18 @@ import PromptDetail from "./components/PromptDetail";
 import "./App.css";
 
 function App() {
+  const [prompts, setPrompts] = useState(initialPrompts);
+
+  function toggleFavorite(promptId) {
+    setPrompts((currentPrompts) =>
+      currentPrompts.map((prompt) =>
+        prompt.id === promptId
+          ? { ...prompt, favorite: !prompt.favorite }
+          : prompt,
+      ),
+    );
+  }
+
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedPromptId, setSelectedPromptId] = useState(null);
@@ -18,14 +30,25 @@ function App() {
     );
   }
 
+  const normalizedSearch = searchTerm.toLowerCase().trim();
+
   const filteredPrompts = prompts.filter((prompt) => {
-    const matchesSearch =
-      prompt.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      prompt.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      prompt.content.toLowerCase().includes(searchTerm.toLowerCase());
+    const searchableText = [
+      prompt.title,
+      prompt.description,
+      prompt.content,
+      prompt.category,
+      ...prompt.tags,
+    ]
+      .join(" ")
+      .toLowerCase();
+
+    const matchesSearch = searchableText.includes(normalizedSearch);
 
     const matchesCategory =
-      selectedCategory === "All" || prompt.category === selectedCategory;
+      selectedCategory === "All" ||
+      (selectedCategory === "Favorites" && prompt.favorite) ||
+      prompt.category === selectedCategory;
 
     return matchesSearch && matchesCategory;
   });
@@ -48,12 +71,16 @@ function App() {
 
           <PromptList
             prompts={filteredPrompts}
-            selectedPromptId={selectedPrompt?.id}
+            selectedPromptId={selectedPromptId}
             onSelectPrompt={handleSelectPrompt}
+            onToggleFavorite={toggleFavorite}
           />
         </div>
 
-        <PromptDetail prompt={selectedPrompt} />
+        <PromptDetail
+          prompt={selectedPrompt}
+          onToggleFavorite={toggleFavorite}
+        />
       </section>
     </main>
   );
