@@ -206,6 +206,9 @@ body {
 }
 
 /* ─── Prompt Detail ────────────────────────────────────────────────────────── */
+.prompt-detail {
+  padding: 16px 16px;
+}
 
 .prompt-detail h2 {
   font-size: 18px;
@@ -255,29 +258,21 @@ body {
 
 /* ─── Empty States ─────────────────────────────────────────────────────────── */
 
-.empty-state {
-  color: #6f665d;
-  font-size: 14px;
-  padding: 16px 0;
-}
-
 .empty-state h2 {
-  font-size: 18px;
+  color: #6f665d;
+  font-size: 16px;
   margin-bottom: 8px;
 }
 
 .empty-state p {
   color: #6f665d;
+  font-size: 14px;
   line-height: 1.4;
-}
-
-.empty-detail {
-  color: #6f665d;
 }
 
 /* ─── Responsive ───────────────────────────────────────────────────────────── */
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .app {
     padding: 20px;
   }
@@ -286,7 +281,43 @@ body {
     grid-template-columns: 1fr;
   }
 
-  .search-bar {
-    flex-direction: column;
+  .sidebar,
+  .content-area,
+  .prompt-detail {
+    width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .sidebar ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .sidebar li {
+    width: auto;
+  }
+
+  .category-button {
+    width: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .app {
+    padding: 16px;
+  }
+
+  .header h1 {
+    font-size: 32px;
+  }
+
+  .prompt-card {
+    padding: 16px;
+  }
+
+  .prompt-detail {
+    padding: 18px;
   }
 }

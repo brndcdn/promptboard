@@ -10,7 +10,7 @@ function PromptList({
     return (
       <section className="empty-state">
         <h2>No prompts found</h2>
-        <p>Try adjusting your search or category filter.</p>
+        <p>Try modifying your search or selecting another category.</p>
       </section>
     );
   }

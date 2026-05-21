@@ -1,9 +1,11 @@
 function PromptDetail({ prompt }) {
   if (!prompt) {
     return (
-      <aside className="prompt-detail empty-detail">
-        <h2>No prompt selected</h2>
-        <p>Select a prompt from the list to view its details.</p>
+      <aside className="prompt-detail">
+        <div className="empty-state">
+          <h2>No prompt selected</h2>
+          <p>Select a prompt card from the list.</p>
+        </div>
       </aside>
     );
   }
