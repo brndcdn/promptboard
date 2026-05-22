@@ -1,16 +1,79 @@
-# React + Vite
+# PromptBoard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+PromptBoard is a React frontend prototype for browsing, filtering, favoriting, and copying reusable AI prompts.
 
-Currently, two official plugins are available:
+It was built as part of a 1-week design engineering sprint focused on improving React fundamentals, frontend architecture, and AI-assisted product development workflows.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Features
 
-## React Compiler
+- Browse reusable AI prompts
+- Search prompts by title, description, content, category, and tags
+- Filter prompts by category
+- Filter favorite prompts
+- Select a prompt to view details
+- Copy prompt content to clipboard
+- Responsive desktop and mobile layout
+- Empty states for search and selection flows
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Prototype Scope
 
-## Expanding the ESLint configuration
+PromptBoard is a frontend prototype focused on interaction design and React implementation.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The current version does not include:
+
+- backend storage
+- authentication
+- cloud sync
+- markdown rendering
+- syntax highlighting
+- persistent favorites after refresh
+
+## Tech Stack
+
+- React
+- Vite
+- CSS
+
+## Screenshots
+
+### Desktop
+
+![PromptBoard desktop screenshot](./public/screenshots/promptboard-desktop.png)
+
+### Mobile
+
+![PromptBoard mobile screenshot](./public/screenshots/promptboard-mobile.png)
+
+## Live Demo
+
+[Add deployment link here.](https://promptboard-manager.netlify.app/)
+
+## Run Locally
+
+```bash
+npm install
+npm run dev
+```
+
+## Learning Focus
+
+This project focused on:
+
+- component hierarchy
+- props
+- useState
+- controlled inputs
+- list filtering
+- derived state
+- conditional rendering
+- event handling
+- responsive layout
+- scoped AI-assisted refinement
+
+## Future Improvements
+
+- localStorage persistence
+- editable prompt library
+- prompt creation flow
+- copy success toast instead of browser alert
+- markdown preview
