@@ -97,8 +97,7 @@ body {
   margin-bottom: 16px;
 }
 
-.search-bar input,
-.search-bar select {
+.search-bar input {
   width: 100%;
   padding: 10px 12px;
   border: 1px solid #d8cfc4;
@@ -141,10 +140,6 @@ body {
   align-items: center;
 }
 
-.prompt-card-main {
-  min-width: 0;
-}
-
 .prompt-card-header,
 .detail-header {
   display: flex;
@@ -155,7 +150,7 @@ body {
 
 .prompt-card h3 {
   font-size: 16px;
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .prompt-card p {
@@ -286,9 +281,7 @@ body {
   .prompt-detail {
     width: 100%;
   }
-}
 
-@media (max-width: 900px) {
   .sidebar ul {
     display: flex;
     flex-wrap: wrap;

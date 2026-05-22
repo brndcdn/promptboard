@@ -77,10 +77,7 @@ function App() {
           />
         </div>
 
-        <PromptDetail
-          prompt={selectedPrompt}
-          onToggleFavorite={toggleFavorite}
-        />
+        <PromptDetail prompt={selectedPrompt} />
       </section>
     </main>
   );
