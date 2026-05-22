@@ -48,6 +48,10 @@ The current version does not include:
 
 [promptboard-manager.netlify.app](https://promptboard-manager.netlify.app/)
 
+## Repository
+
+https://github.com/brndcdn/promptboard/
+
 ## Run Locally
 
 ```bash
