@@ -46,7 +46,7 @@ The current version does not include:
 
 ## Live Demo
 
-[Add deployment link here.](https://promptboard-manager.netlify.app/)
+[promptboard-manager.netlify.app](https://promptboard-manager.netlify.app/)
 
 ## Run Locally
 
